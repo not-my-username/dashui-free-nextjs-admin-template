@@ -11,15 +11,15 @@ const ActiveProjects = () => {
             <Col md={12} xs={12}>
                 <Card>
                     <Card.Header className="bg-white  py-4">
-                        <h4 className="mb-0">Active Projects</h4>
+                        <h4 className="mb-0">Student Overview</h4>
                     </Card.Header>
                     <Table responsive className="text-nowrap mb-0">
                         <thead className="table-light">
                             <tr>
-                                <th>Project name</th>
-                                <th>Hours</th>
+                                <th>Name</th>
+                                <th>Study Hours</th>
                                 <th>priority</th>
-                                <th>Members</th>
+                                <th>Badges</th>
                                 <th>Progress</th>
                             </tr>
                         </thead>
@@ -30,8 +30,8 @@ const ActiveProjects = () => {
                                         <td className="align-middle">
                                             <div className="d-flex align-items-center">
                                                 <div>
-                                                    <div className={`icon-shape icon-md border p-4 rounded-1 ${item.brandLogoBg}`}>
-                                                        <Image src={item.brandLogo} alt="" />
+                                                    <div className={`border p-2 rounded-1`}>
+                                                        {item.icon}
                                                     </div>
                                                 </div>
                                                 <div className="ms-3 lh-1">
