@@ -4,9 +4,9 @@
  */
 
 // sub components for /pages/dashboard
-import ActiveProjects from 'sub-components/dashboard/ActiveProjects';
+import ActiveProjects from 'sub-components/dashboard/StudentOverview';
 import TasksPerformance from 'sub-components/dashboard/TasksPerformance';
-import Teams from 'sub-components/dashboard/Teams';
+import Teams from 'sub-components/dashboard/Courses';
 
 // sub components for /pages/profile
 import AboutMe from 'sub-components/profile/AboutMe';

@@ -1,11 +1,11 @@
 // import node module libraries
 import React from "react";
 import Link from 'next/link';
-import { Card, Table, Dropdown, Image } from 'react-bootstrap';
+import { Card, Table, Dropdown, Image, ProgressBar } from 'react-bootstrap';
 import { MoreVertical } from 'react-feather';
 
 // import required data files
-import TeamsData from "data/dashboard/TeamsData";
+import ActiveCourses from "data/dashboard/ActiveCourses";
 
 const Teams = () => {
 
@@ -48,25 +48,25 @@ const Teams = () => {
     return (
         <Card className="h-100">
             <Card.Header className="bg-white py-4">
-                <h4 className="mb-0">Teams </h4>
+                <h4 className="mb-0">Courses</h4>
             </Card.Header>
             <Table responsive className="text-nowrap">
                 <thead className="table-light">
                     <tr>
                         <th>Name</th>
-                        <th>Role</th>
-                        <th>Last Activity</th>
+                        <th>Progress</th>
+                        <th>Due By</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {TeamsData.map((item, index) => {
+                    {ActiveCourses.map((item, index) => {
                         return (
-                            <tr key={index}>
+                            <tr key={index} className="p-10">
                                 <td className="align-middle">
                                     <div className="d-flex align-items-center">
                                         <div>
-                                            <Image src={item.image} alt="" className="avatar-md avatar rounded-circle" />
+                                            {item.icon}
                                         </div>
                                         <div className="ms-3 lh-1">
                                             <h5 className=" mb-1">{item.name}</h5>
@@ -74,8 +74,12 @@ const Teams = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="align-middle">{item.role}</td>
-                                <td className="align-middle">{item.lastActivity}</td>
+                                <td className="align-middle">
+                                <div className="float-start me-3">{item.progress}%</div>
+                                            <div className="mt-2">
+                                                <ProgressBar now={item.progress} style={{ height: '5px' }} />
+                                            </div></td>
+                                <td className="align-middle">{item.dueData}</td>
                                 <td className="align-middle">
                                     <ActionMenu />
                                 </td>
